@@ -9,6 +9,11 @@ The two most notable differences between Version 3 and Version 4 of the MCC Rove
 
 ------------
 
+Update 1.01: 2022-11-13
+
+Updates to the Rover Character Generator.
+
+
 Initial Commit: 2022-10-26
 
 The initial commit of the MCC Rover Character Generator Version 4.
