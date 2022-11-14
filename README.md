@@ -9,6 +9,19 @@ The two most notable differences between Version 3 and Version 4 of the MCC Rove
 
 ------------
 
+A link to the live version of the Mutant Crawl Classics (MCC) Rover Character Generator Version 4 is available at:
+
+https://www.oldschooladventures.org/mcc2/classes/rover/
+
+------------
+
+
+Update 1.01: 2022-11-14
+
+The working version of the Mutant Crawl Classics (MCC) Rover Character Generator Version 4 has been added to the site.  As well, a link to the live version of the character generator has been added to the ReadMe file. 
+
+
+
 Update 1.01: 2022-11-13
 
 Updates to the Rover Character Generator.
