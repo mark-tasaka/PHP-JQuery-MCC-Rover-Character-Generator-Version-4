@@ -59,21 +59,21 @@ function getAttackBonusMissile($level)
 
 function savingThrowReflex($level)
 {
-    $reflex = 0;
+    $reflex = 1;
 
-    if($level >= 3 && $level <= 5)
-    {
-        $reflex = 1;
-    }
-
-    if($level >= 6 && $level <= 8)
+    if($level >= 4 && $level <= 6)
     {
         $reflex = 2;
     }
 
-    if($level >= 9 && $level <= 10)
+    if($level >= 7 && $level <= 9)
     {
         $reflex = 3;
+    }
+
+    if($level == 10)
+    {
+        $reflex = 4;
     }
 
     return $reflex;
@@ -84,22 +84,7 @@ function savingThrowReflex($level)
 function savingThrowFort($level)
 {
 
-  $fort = 1;
-
-  if($level >= 4 && $level <= 6)
-  {
-      $fort = 2;
-  }
-
-  if($level >= 7 && $level <= 9)
-  {
-      $fort = 3;
-  }
-
-  if($level == 10)
-  {
-      $fort = 4;
-  }
+  $fort = $level;
 
   return $fort;
 
@@ -115,25 +100,20 @@ function savingThrowWill($level)
         $will = 2;
     }
 
-    if($level == 5)
+    if($level >= 5 && $level <= 6)
     {
         $will = 3;
     }
+
     
-    if($level >= 6 && $level <= 7)
+    if($level >= 7 && $level <= 9)
     {
         $will = 4;
     }
 
-    
-    if($level >= 8 && $level <= 9)
-    {
-        $will = 5;
-    }
-
     if($level == 10)
     {
-        $will = 6;
+        $will = 5;
     }
 
     return $will;
@@ -146,22 +126,22 @@ function actionDice($level)
 {
     $actionDice = "";
 
-    if($level <= 5)
+    if($level <= 4)
     {
         $actionDice = "1d20";
     }
 
-    if($level == 6)
+    if($level == 5)
     {
         $actionDice = "1d20+1d14";
     }
 
-    if($level == 7)
+    if($level == 6)
     {
         $actionDice = "1d20+1d16";
     }
 
-    if($level >= 8)
+    if($level >= 7)
     {
         $actionDice = "1d20 (x2)";
     }
@@ -172,67 +152,87 @@ function actionDice($level)
 
 
 
+
 function criticalDie($level)
 {
     $critical = "";
 
-    if($level >= 1 && $level <= 2)
+    switch ($level)
     {
-        $critical = "1d8/III";
-    }
+            case 1:
+                $critical = "1d10/II";
+                break;
 
+            case 2:
+                $critical = "1d12/II";
+                break;
+      
+            case 3:
+            $critical = "1d14/II";
+            break;
 
-    if($level >= 3 && $level <= 4)
-    {
-        $critical = "1d10/III";
-    }
+            case 4:
+                $critical = "1d16/II";
+                break;
+      
+            case 5:
+                $critical = "1d20/II";
+                break;
 
-    if($level >= 5 && $level <= 6)
-    {
-        $critical = "1d12/III";
-    }
-
-    if($level >= 7 && $level <= 8)
-    {
-        $critical = "1d14/III";
-    }
-
-    if($level >= 9 && $level <= 10)
-    {
-        $critical = "1d14/III";
+            case 6:
+                $critical = "1d24/II";
+                break;
+      
+            case 7:
+            $critical = "1d30/II";
+            break;
+            
+            case 8:
+                $critical = "1d30+2/II";
+                break;
+      
+            case 9:
+            $critical = "1d30+4/II";
+            break;
+            
+            case 10:
+                $critical = "1d30+6/II";
+                break;
+      
+            default:
+            $critical = "99999";
     }
 
     return $critical;
 
 }
 
-
 function title($level)
 {
 
         if($level == 1)
         {
-            $title = "Intern";
+            $title = "Tenderfoot";
         }
         else if($level == 2)
         {
-            $title = "Medic";
+            $title = "Trailwalker";
         }
         else if($level == 3)
         {
-            $title = "Curate";
+            $title = "Pathfinder";
         }
         else if($level == 4)
         {
-            $title = "Doctor";
+            $title = "Explorer";
         }
         else if($level == 5)
         {
-            $title = "Healer";
+            $title = "Rover";
         }
         else
         {
-            $title = "High Healer";
+            $title = "Alpha-Rover";
         }
 
 return $title;
